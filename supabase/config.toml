@@ -1,0 +1,13 @@
+project_id = "unfazed-fashion-store"
+
+[functions.initialize-payment]
+verify_jwt = false
+
+[functions.paystack-webhook]
+verify_jwt = false
+
+[functions.verify-payment]
+verify_jwt = false
+
+[functions.process-order-emails]
+verify_jwt = false

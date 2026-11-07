@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+:root {
+  color: #121212;
+  background: #ffffff;
+  font-family: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --store-ink: #121212;
+  --store-muted: #6b6b67;
+  --store-line: #deddd8;
+  --store-canvas: #f5f4f0;
+  --store-accent: #d91f45;
+  --store-header-height: 4.25rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #ffffff;
+  color: var(--store-ink);
+  line-height: 1.5;
+}
+
+button,
+a,
+select,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+select,
+input,
+textarea {
+  font: inherit;
+}
+
+button:not(:disabled),
+select:not(:disabled) {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--store-ink);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--store-accent);
+}
+
+img {
+  display: block;
+}
+
+.store-container {
+  width: min(100%, 96rem);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 3rem);
+}
+
+.store-section {
+  padding-block: clamp(4.5rem, 8vw, 8rem);
+}
+
+.store-page {
+  padding-top: clamp(7.5rem, 10vw, 9rem);
+  padding-bottom: clamp(4.5rem, 8vw, 7rem);
+}
+
+.store-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.store-display {
+  font-size: clamp(2.65rem, 6vw, 6.25rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+}
+
+.store-title {
+  font-size: clamp(2.15rem, 4vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.store-section-title {
+  font-size: clamp(1.85rem, 3vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.store-copy {
+  color: var(--store-muted);
+  font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+  line-height: 1.75;
+}
+
+.store-button-primary,
+.store-button-secondary {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.8rem 1.35rem;
+  border: 1px solid var(--store-ink);
+  border-radius: 0.125rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.store-button-primary {
+  background: var(--store-ink);
+  color: #ffffff;
+}
+
+.store-button-primary:hover {
+  background: #343434;
+  border-color: #343434;
+}
+
+.store-button-secondary {
+  background: transparent;
+  color: var(--store-ink);
+}
+
+.store-button-secondary:hover {
+  background: var(--store-ink);
+  color: #ffffff;
+}
+
+.store-button-primary:disabled,
+.store-button-secondary:disabled {
+  cursor: not-allowed;
+  border-color: #d6d3d1;
+  background: #d6d3d1;
+  color: #78716c;
+}
+
+.store-field {
+  width: 100%;
+  min-height: 3.15rem;
+  border: 1px solid #c9c7c1;
+  border-radius: 0.125rem;
+  background: #ffffff;
+  padding: 0.78rem 0.95rem;
+  color: var(--store-ink);
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.store-field:focus {
+  border-color: var(--store-ink);
+  box-shadow: 0 0 0 1px var(--store-ink);
+}
+
+.store-field:disabled {
+  cursor: not-allowed;
+  background: #f3f2ef;
+  color: #8a8983;
+}
+
+.store-divider {
+  border-color: var(--store-line);
+}
+
+.store-panel {
+  border: 1px solid var(--store-line);
+  border-radius: 0.125rem;
+  background: #ffffff;
+}
+
+.store-panel-muted {
+  border: 1px solid var(--store-line);
+  border-radius: 0.125rem;
+  background: var(--store-canvas);
+}
+
+.store-notice {
+  border-left: 3px solid currentColor;
+  padding: 0.85rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.store-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  padding-inline: 0.65rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.account-shell .rounded-3xl,
+.admin-shell .rounded-3xl {
+  border: 1px solid var(--store-line);
+  border-radius: 0.125rem;
+  box-shadow: none;
+}
+
+.account-shell .rounded-2xl,
+.admin-shell .rounded-2xl {
+  border-radius: 0.125rem;
+  box-shadow: none;
+}
+
+.account-shell .rounded-xl,
+.admin-shell .rounded-xl {
+  border-radius: 0.125rem;
+}
+
+.account-shell .shadow-sm,
+.admin-shell .shadow-sm {
+  box-shadow: none;
+}
+
+.account-shell a.rounded-full,
+.account-shell button.rounded-full,
+.admin-shell a.rounded-full,
+.admin-shell button.rounded-full {
+  border-radius: 0.125rem;
+}
+
+.account-shell .rounded-2xl.bg-white,
+.admin-shell .rounded-2xl.bg-white {
+  border: 1px solid var(--store-line);
+}
+
+.admin-shell h2,
+.admin-shell h3,
+.admin-shell h4 {
+  letter-spacing: -0.025em;
+}
+
+.admin-shell label > span:first-child,
+.account-shell label > span:first-child {
+  color: #404040;
+}
+
+.account-shell input:not([type="checkbox"]):not([type="radio"]),
+.account-shell select,
+.account-shell textarea,
+.admin-shell input:not([type="checkbox"]):not([type="radio"]),
+.admin-shell select,
+.admin-shell textarea {
+  border-radius: 0.125rem;
+}
+
+.account-shell button,
+.account-shell a,
+.admin-shell button,
+.admin-shell a {
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, opacity 180ms ease;
+}
+
+.account-shell table,
+.admin-shell table {
+  min-width: 42rem;
+}
+
+.admin-content > * {
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .account-shell .rounded-3xl,
+  .admin-shell .rounded-3xl {
+    padding: 1.1rem;
+  }
+
+  .account-shell input:not([type="checkbox"]):not([type="radio"]),
+  .account-shell select,
+  .account-shell textarea,
+  .admin-shell input:not([type="checkbox"]):not([type="radio"]),
+  .admin-shell select,
+  .admin-shell textarea {
+    min-height: 2.85rem;
+    padding: 0.7rem 0.8rem;
+    font-size: 0.875rem;
+  }
+
+  .admin-shell .overflow-hidden:has(table) {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --store-header-height: 4rem;
+  }
+
+  .store-container {
+    padding-inline: 1rem;
+  }
+
+  .store-page {
+    padding-top: 7rem;
+  }
+}
